@@ -1,0 +1,84 @@
+
+<sq-card class="card-layout">
+
+  <div>
+    <!--Form Div-->
+  <div>
+    <form [formGroup]="searchForm">
+        <div class="stack-form-controls-vertically">
+          <div >
+            <sq-textbox type="text" placeholder="Last Name" tabOrder="1"
+            formControlName="lastName" required="true" >
+            </sq-textbox>
+          </div>
+            <div class="sq-text-box-div">
+            <sq-textbox type="text" placeholder="First Name" tabOrder="2"
+            formControlName="firstName">
+            </sq-textbox>
+          </div>
+          <div class="sq-text-box-div">
+              <sq-textbox type="text" placeholder="Middle Name" tabOrder="3"
+              formControlName="middleName"  >
+              </sq-textbox>
+            </div>
+        </div>
+  
+         <div class="stack-form-controls-vertically">
+            <div >
+              <sq-textbox type="text" placeholder="Patient ID" tabOrder="4"
+              formControlName="patientId"  >
+              </sq-textbox>
+            </div>
+
+            <div >
+              <sq-textbox type="text" placeholder="NHS No" tabOrder="5"
+              formControlName="nhsNo"  >
+              </sq-textbox>
+            </div>
+            <div >
+                <sq-textbox type="text" placeholder="Billing Account Number" tabOrder="6"
+                formControlName="billAccount">
+                </sq-textbox>
+              </div>
+            </div>
+  
+             <div class="stack-form-controls-vertically">
+            <div >
+              <sq-select placeholder="Select HID"
+              required= "true"
+              formControlName="hidList"
+              tabOrder= "8"
+              enableMultiSelect="true"
+              [sqConfig]="sqHidListConfig"
+              [validationMessage]="sqSelectvalidationMessage">
+              </sq-select>
+              <div  >
+                  <sq-checkbox formControlName ="checkAllCheckBox"
+                  labelPosition='before'
+                  tabOrder="7"
+                  color='primary'
+                  [checked]="sqChecked"
+                  [indeterminate]="sqindeterminate"
+                  name="sqCheckbox1"
+                  (sqChange)="sqChange($event)"
+                  >Check All  </sq-checkbox>
+                 </div>
+            </div>
+          </div>
+
+          <div class="select-all-section">
+             
+          </div>
+
+          <div class="form-button-section">
+
+              <sq-button type="reset" variant="raised-button" color="basic" >Clear</sq-button>
+              
+              <sq-button type="submit" variant="raised-button" color="primary"
+              (clickHandler)="submitForm()">Submit</sq-button>
+            </div>
+    </form>
+  </div>
+  </div>
+  
+</sq-card>

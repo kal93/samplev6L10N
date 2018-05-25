@@ -1,13 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+  <h5>
+     {{ title }}!
+  </h5>
 </div>
-<mat-card>
-  <h3>Used Event</h3>
-  <mat-form-field appearance='outline' >
-    <mat-label>Firstname</mat-label>
-    <input matInput [(ngModel)]="fname" (ngModelChange)="onChange($event)" placeholder="Firstname here">
-  </mat-form-field>
-</mat-card>
+
+<sq-card>
+  <p>{{ 'Greeting' | translate:lang }}</p>
+  <p title="{{ 'Greeting' | translate:lang }}">{{ 'Subtitle' | translate:lang }}</p>
+
+    <p>{{ 'Change language' | translate:lang }}</p>
+
+    <sq-button (click)="selectLanguage('en');">English</sq-button>
+    <sq-button (click)="selectLanguage('it');">Italiano</sq-button>
+    <sq-button (click)="selectLanguage('ar');">Ar</sq-button>
+
+
+</sq-card>
+
+<router-outlet></router-outlet>
