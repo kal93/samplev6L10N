@@ -1,5 +1,5 @@
 
-<sq-card class="card-layout">
+<sq-card >
 
   <div>
     <!--Form Div-->
@@ -83,10 +83,10 @@
 
           <div class="form-button-section">
 
-              <sq-button type="reset" variant="raised-button" color="basic" >Clear</sq-button>
+              <sq-button type="reset" variant="raised-button" color="basic" l10nTranslate>Clear</sq-button>
               
               <sq-button type="submit" variant="raised-button" color="primary"
-              (clickHandler)="submitForm()">Submit</sq-button>
+              (clickHandler)="submitForm()" l10nTranslate>Submit</sq-button>
             </div>
     </form>
   </div>
@@ -99,7 +99,7 @@
 
 
 
-  <!-- ANGULAR I18N PART BELOW, REMOVED IT FROM EXISTING CODE DUE TO BUILD ERRORS -->
+  <!-- ANGULAR I18N PART BELOW, REMOVED IT FROM EXISTING CODE DUE TO AOT COMPILATION ERRORS IN COMPONENT-->
 
 
 

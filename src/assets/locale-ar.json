@@ -12,6 +12,9 @@
     "NHS":"نح",
     "SelectHID":"حدد HID",
     "BillingAccountNumber":"رقم حساب الفوترة",
-    "CheckAll":"تحقق من الكل"
+    "CheckAll":"تحقق من الكل",
+
+    "Clear":"إعادة تعيين",
+    "Submit":"خضع"
 
 }

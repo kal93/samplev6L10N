@@ -12,5 +12,8 @@
     "NHS":"NHS",
     "SelectHID":"SelectHID",
     "BillingAccountNumber":"Billing Account Number",
-    "CheckAll":"Check All"
+    "CheckAll":"Check All",
+
+    "Clear":"Clear",
+    "Submit":"Submit"
 }
