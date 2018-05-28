@@ -1,6 +1,11 @@
 {
+
     "Title": "Localizzazione in Angular",
     "Subtitle": "Il mondo è piccolo",
     "Change language": "Cambia lingua",
-    "Greeting": "Ciao!"
+    "Greeting": "Ciao!",
+
+    "LastName":"",
+    "FirstName":"",
+    "Middle Name":""
 }

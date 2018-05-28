@@ -1,21 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<div [dir]="dir">
 <div style="text-align:center">
   <h5>
      {{ title }}!
   </h5>
 </div>
 
-<sq-card>
+<sq-card >
   <p>{{ 'Greeting' | translate:lang }}</p>
   <p title="{{ 'Greeting' | translate:lang }}">{{ 'Subtitle' | translate:lang }}</p>
 
+  <p l10nTranslate>Subtitle</p>
+
     <p>{{ 'Change language' | translate:lang }}</p>
 
-    <sq-button (click)="selectLanguage('en');">English</sq-button>
-    <sq-button (click)="selectLanguage('it');">Italiano</sq-button>
-    <sq-button (click)="selectLanguage('ar');">Ar</sq-button>
-
+    <sq-button (click)="selectLanguage('en'); getLanguageDirection(language)">English</sq-button>
+    <sq-button (click)="selectLanguage('it');  getLanguageDirection(language)">Italiano</sq-button>
+    <sq-button (click)="selectLanguage('ar');  getLanguageDirection(language)">Ar</sq-button>
 
 </sq-card>
 
 <router-outlet></router-outlet>
+</div>

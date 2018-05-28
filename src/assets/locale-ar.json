@@ -1,6 +1,17 @@
-{
+
+ {
     "Title": "التعريب الزاوي",
     "Subtitle": "إنه عالم صغير",
     "Change language": "غير اللغة",
-    "Greeting": "مرحبا"
+    "Greeting": "مرحبا",
+
+    "LastName":"الكنية",
+    "FirstName":"الاسم الاول",
+    "MiddleName":"الاسم الأوسط",
+    "PatientID":"رقم المريض",
+    "NHS":"نح",
+    "SelectHID":"حدد HID",
+    "BillingAccountNumber":"رقم حساب الفوترة",
+    "CheckAll":"تحقق من الكل"
+
 }

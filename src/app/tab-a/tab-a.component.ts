@@ -1,6 +1,9 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit, DoCheck, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, ValidatorFn, AbstractControl } from '@angular/forms';
 import { MatCheckboxChange } from '@angular/material';
+
+import { LocaleService, TranslationService, Language  } from 'angular-l10n';
+import { ISubscription } from 'rxjs/Subscription';
 
 import { SqSelectSettingsModel } from 'sqvue';
 
@@ -10,15 +13,30 @@ import { SqSelectSettingsModel } from 'sqvue';
   styleUrls: ['./tab-a.component.css']
 })
 export class TabAComponent implements OnInit, DoCheck {
+
+  @Language() lang: string;
+
+  subscription: ISubscription; 
+
+  today = Date.now();
+
   sqChecked = false;
 
   sqHidListConfig: SqSelectSettingsModel = <SqSelectSettingsModel>{};
 
   searchForm: FormGroup;
 
+  LastName: string;
+  FirstName: string;
+  MiddleName: string;
+  PatientID: string;
+  NHS: string;
+  SelectHID: string;
+  BillingAccountNumber: string;
+
   sqSelectvalidationMessage: string;
 
-  constructor( private formBuilder: FormBuilder ) {
+  constructor( private formBuilder: FormBuilder, public locale: LocaleService, public translation: TranslationService ) {
 
     this.searchForm = formBuilder.group({
       'lastName': new FormControl(),
@@ -40,6 +58,19 @@ export class TabAComponent implements OnInit, DoCheck {
       { value: 'HID2', viewValue: 'HID3' },
       { value: 'HID3', viewValue: 'HID3' }
       ];
+      // code translations i.e property bindings,complex objects
+       this.translation.translationChanged().subscribe(
+        () => {
+          this.LastName = this.translation.translate('LastName');
+          this.FirstName = this.translation.translate('FirstName');
+          this.MiddleName = this.translation.translate('MiddleName');
+          this.PatientID = this.translation.translate('PatientID');
+          this.NHS = this.translation.translate('NHS');
+          this.SelectHID = this.translation.translate('SelectHID');
+          this.BillingAccountNumber = this.translation.translate('BillingAccountNumber');
+        }
+      );
+
    }
   ngDoCheck() {
     this.sqSelectvalidationMessage = this.searchForm.get('hidList').hasError('required') ? 'This is Required' : '';
@@ -54,5 +85,4 @@ export class TabAComponent implements OnInit, DoCheck {
   submitForm() {
       console.log(`Submit Form ${JSON.stringify(this.searchForm.value)}`);
   }
-
 }

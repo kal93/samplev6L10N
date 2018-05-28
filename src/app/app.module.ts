@@ -1,17 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {CommonModule} from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule, MatCardModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 
-import { SqCardModule, SqButtonModule, SqTextboxModule, SqSelectModule, SqCheckboxModule } from 'sqvue';
+import { SqCardModule, SqButtonModule, SqTextboxModule, SqSelectModule, SqCheckboxModule, SqTabsModule } from 'sqvue';
+
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import localeEn from '@angular/common/locales/en-US-POSIX';
 
 import { L10nConfig, L10nLoader, TranslationModule, StorageStrategy, ProviderType} from 'angular-l10n';
 import { TabAComponent } from './tab-a/tab-a.component';
+
+registerLocaleData(localeFr);
+
+const browserLocale = document ['locale'] as string;
 
 const l10nConfig: L10nConfig = {
     locale: {
@@ -52,6 +61,7 @@ const routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -62,9 +72,10 @@ const routes = [
     SqButtonModule,
     SqTextboxModule,
     SqSelectModule,
-    SqCheckboxModule
+    SqCheckboxModule,
+    SqTabsModule
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: 'fr'}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
