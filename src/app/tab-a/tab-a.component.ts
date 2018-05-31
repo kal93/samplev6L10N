@@ -1,6 +1,6 @@
 import { Component, OnInit, DoCheck, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, ValidatorFn, AbstractControl } from '@angular/forms';
-import { MatCheckboxChange } from '@angular/material';
+import { MatCheckboxChange, MAT_CHIPS_DEFAULT_OPTIONS } from '@angular/material';
 
 import { LocaleService, TranslationService, Language  } from 'angular-l10n';
 import { ISubscription } from 'rxjs/Subscription';
@@ -16,9 +16,12 @@ export class TabAComponent implements OnInit, DoCheck {
 
   @Language() lang: string;
 
-  subscription: ISubscription; 
+  Angulari18nlocale: string;
+
+  subscription: ISubscription;
 
   today = Date.now();
+  a  = '222';
 
   sqChecked = false;
 
@@ -61,6 +64,9 @@ export class TabAComponent implements OnInit, DoCheck {
       // code translations i.e property bindings,complex objects
        this.translation.translationChanged().subscribe(
         () => {
+          // change the locale for the angluar i18n pipes
+            this.Angulari18nlocale = this.lang;
+          // l10n tranlation service
           this.LastName = this.translation.translate('LastName');
           this.FirstName = this.translation.translate('FirstName');
           this.MiddleName = this.translation.translate('MiddleName');

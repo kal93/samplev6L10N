@@ -41,8 +41,12 @@ export class AppComponent implements OnInit, OnDestroy {
         console.log(this.dir);
     }
 
+    selectLocale(language: string): void {
+        this.locale.setDefaultLocale(language);
+    }
+
     getLanguageDirection(language?: string) {
-        console.log(language);
+        console.log( 'language ' + language);
         console.log(this.locale.getLanguageDirection(language) as Direction);
         return this.locale.getLanguageDirection(language) as Direction;
     }

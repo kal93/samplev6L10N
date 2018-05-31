@@ -94,7 +94,8 @@
   
 </sq-card>
 <sq-card>
-    <p>Today : {{ today | date }}</p>
+    <p>Today : {{ today | date: 'fullDate':'':Angulari18nlocale }}</p>
+    <p>Currency : {{ a | currency: 'USD':'symbol':'4.2-2' }} </p>
   </sq-card>
 
 

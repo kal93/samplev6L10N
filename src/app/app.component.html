@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div [dir]="dir">
+<div [dir]="dir" >
 <div style="text-align:center">
   <h5>
      {{ title }}!
@@ -14,10 +14,11 @@
 
     <p>{{ 'Change language' | translate:lang }}</p>
 
-    <sq-button (click)="selectLanguage('en'); getLanguageDirection(language)">English</sq-button>
+    <!-- <sq-button (click)="selectLanguage('en'); getLanguageDirection(language)">English</sq-button>
     <sq-button (click)="selectLanguage('it');  getLanguageDirection(language)">Italiano</sq-button>
-    <sq-button (click)="selectLanguage('ar');  getLanguageDirection(language)">Ar</sq-button>
+    <sq-button (click)="selectLanguage('ar');  getLanguageDirection(language)">Ar</sq-button> -->
 
+    <!-- <sq-button (click)="selectLocale('ar');  getLanguageDirection(language)">Ar</sq-button> -->
 </sq-card>
 
 <router-outlet></router-outlet>

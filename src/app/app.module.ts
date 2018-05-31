@@ -13,12 +13,17 @@ import { SqCardModule, SqButtonModule, SqTextboxModule, SqSelectModule, SqCheckb
 
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+// en-US locale data
 import localeEn from '@angular/common/locales/en-US-POSIX';
+// ar locale data
+import localeAr from '@angular/common/locales/ar-AE';
 
 import { L10nConfig, L10nLoader, TranslationModule, StorageStrategy, ProviderType} from 'angular-l10n';
 import { TabAComponent } from './tab-a/tab-a.component';
 
-registerLocaleData(localeFr);
+registerLocaleData(localeEn, 'en');
+registerLocaleData(localeFr, 'fr');
+registerLocaleData(localeAr, 'ar');
 
 const browserLocale = document ['locale'] as string;
 
@@ -35,7 +40,7 @@ const l10nConfig: L10nConfig = {
     translation : {
       providers: [ { type: ProviderType.Static, prefix: './assets/locale-'} ],
       caching: true,
-      missingValue: 'No Key'
+      missingValue: 'No Key......'
     }
 };
 
@@ -75,7 +80,7 @@ const routes = [
     SqCheckboxModule,
     SqTabsModule
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'fr'}],
+  providers: [{provide: LOCALE_ID, useValue: 'en'}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
